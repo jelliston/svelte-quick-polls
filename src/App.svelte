@@ -1,10 +1,15 @@
 <script>
-	export let name;
+	let name = 'Mario';
+	let favFood = 'Pizza';
+	const handleClick = () => {
+		favFood = 'Lasagne';
+	}
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Let's try and build this thing!!</p>
+	<p>It's a {favFood} time!</p>
+	<button on:click={handleClick}>Update favorite food</button>
 </main>
 
 <style>
