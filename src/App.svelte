@@ -1,6 +1,17 @@
 <script>
-	let name = 'Mario';
+	let firstName = 'Mario';
+	let lastName = 'Lopez';
 	let beltColor = 'black';
+	
+	// Reactive values in Svelte watch other values and update when they change
+	$: fullName = `${firstName} ${lastName}`;
+
+	// Reactive statements run whenever data inside the statement changes
+	$: {
+	console.log(beltColor);
+	console.log(fullName);
+	}
+	
 	const handleClick = () => {
 		beltColor = 'orange';
 	}
@@ -10,10 +21,9 @@
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p style="color: {beltColor}">{beltColor} belt!</p>
-	<button on:click={handleClick}>Update belt color</button>
-	<!--<input type="text" on:input={handleInput} value={beltColor}> -->
+	<p>{fullName} - {beltColor} belt!</p>
+	<input type="text" bind:value={firstName}>
+	<input type="text" bind:value={lastName}>
 	<input type="text" bind:value={beltColor}> <!-- bind:value is a svelte key word for 2-way data binding-->
 </main>
 
