@@ -1,15 +1,20 @@
 <script>
 	let name = 'Mario';
-	let favFood = 'Pizza';
+	let beltColor = 'black';
 	const handleClick = () => {
-		favFood = 'Lasagne';
+		beltColor = 'orange';
+	}
+	const handleInput = (e) => {
+		beltColor = e.target.value;
 	}
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>It's a {favFood} time!</p>
-	<button on:click={handleClick}>Update favorite food</button>
+	<p style="color: {beltColor}">{beltColor} belt!</p>
+	<button on:click={handleClick}>Update belt color</button>
+	<!--<input type="text" on:input={handleInput} value={beltColor}> -->
+	<input type="text" bind:value={beltColor}> <!-- bind:value is a svelte key word for 2-way data binding-->
 </main>
 
 <style>
