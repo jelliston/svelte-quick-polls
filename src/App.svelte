@@ -1,3 +1,4 @@
+<!--Started NetNinja Tutorial but stopped at #6 to look into networking-->
 <script>
 	let firstName = 'Mario';
 	let lastName = 'Lopez';
